@@ -4,13 +4,13 @@
         <div class="furniture-item__head">
             <h3>{{ furniture.name }}</h3>
             <div class="furniture-item__action-btns">
-                <button class="furniture-item__action-btn">{% render 'icons/heart.liquid' %}</button>
-                <button class="furniture-item__action-btn">{% render 'icons/share.liquid' %}</button>
+                <button aria-label="Add to favorite" class="furniture-item__action-btn">{% render 'icons/heart.liquid' %}</button>
+                <button aria-label="Share" class="furniture-item__action-btn">{% render 'icons/share.liquid' %}</button>
             </div>
         </div>
         <div class="furniture-item__footer">
             <p class="furniture-item__price">${{ furniture.price }}</p>
-            <button class="furniture-item__buy-btn">Buy Now</button>
+            <button class="furniture-item__buy-btn" aria-label="Buy">Buy Now</button>
         </div>
     </div>
 </div>
