@@ -1,0 +1,80 @@
+{
+    "nav": [
+        {
+            "text": "shop",
+            "href": "#"
+        },
+        {
+            "text": "always pan",
+            "href": "#"
+        },
+        {
+            "text": "mission",
+            "href": "#"
+        },
+        {
+            "text": "faqs",
+            "href": "#"
+        }
+    ],
+    "about_benefits": [
+        {
+            "icon": "shield",
+            "title": "Best Quality",
+            "text": "All of our furniture uses the best materials and choices"
+        },
+        {
+            "icon": "secure",
+            "title": "100% Secure",
+            "text": "All of our furniture uses the best materials and choices"
+        },
+        {
+            "icon": "free-delivery",
+            "title": "Free Shoping",
+            "text": "All of our furniture uses the best materials and choices"
+        }
+    ],
+    "popular_items": [
+        {
+            "img": "f-1.jpg",
+            "name": "White Swan Chair",
+            "price": 40
+        },
+        {
+            "img": "f-2.jpg",
+            "name": "Table",
+            "price": 55
+        },
+        {
+            "img": "f-3.jpg",
+            "name": "Furniture",
+            "price": 70
+        }
+    ],
+    "all_furniture_options": [
+        {
+            "icon": "sofa",
+            "label": "Living Room"
+        },
+        {
+            "icon": "kitchen",
+            "label": "Kitchen"
+        },
+        {
+            "icon": "dining-room",
+            "label": "Dining Room"
+        },
+        {
+            "icon": "office",
+            "label": "Office"
+        },
+        {
+            "icon": "bedroom",
+            "label": "Bed Room"
+        },
+        {
+            "icon": "hallway",
+            "label": "Hallway"
+        }
+    ]    
+}

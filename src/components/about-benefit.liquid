@@ -1,0 +1,8 @@
+<li class="about__benefit">
+    {% assign iconPath = 'icons/' | append: benefit.icon | append: '.liquid' %}
+    {% render iconPath %}
+    <div class="about__benefit-text">
+        <h3 class="about__benefit-title">{{ benefit.title }}</h3>
+        <p class="about__benefit-desc">{{ benefit.text }}</p>
+    </div>
+</li>

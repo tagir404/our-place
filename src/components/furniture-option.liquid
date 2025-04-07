@@ -1,0 +1,11 @@
+<button
+    role="option"
+    id="option-{{ option.icon }}"
+    aria-controls="panel-{{ option.icon }}"
+    aria-selected="{{ selected | default: false }}"
+    class="all-furniture__option{% if selected %} all-furniture__option--active{% endif %}"
+>
+    {% assign iconPath = 'icons/' | append: option.icon | append: '.liquid' %}
+    {% include iconPath %}
+    <p class="all-furniture-option__label">{{ option.label }}</p>
+</button>

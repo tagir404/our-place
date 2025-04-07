@@ -1,13 +1,148 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Place</title>
-  </head>
-  <body>
-    {% render 'header.liquid' %}
+    <title>DudeShape</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header" role="banner">
+            <div class="header__logo" aria-label="DudeShape logo">DudeShape</div>
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <a href="#" class="header__nav-link">Home</a>
+                <a href="#" class="header__nav-link">About</a>
+                <a href="#" class="header__nav-link">Features</a>
+                <a href="#" class="header__nav-link">Contact</a>
+            </nav>
+            <div class="header__actions">
+                <button class="header__button" aria-label="Search">
+                    {% render 'icons/loupe.liquid' %}
+                </button>
+                <button class="header__button" aria-label="Open menu">
+                    {% render 'icons/burger.liquid' %}
+                </button>
+            </div>
+        </header>
+        <main class="main" role="main">
+            <section class="banner" aria-labelledby="banner-title">
+                <img class="banner__image" src="/src/assets/seat.jpg" alt="Modern furniture example">
+                <div class="banner__info">
+                    <h1 class="banner__title" id="banner-title">We Help You Make Modern Furniture</h1>
+                    <p class="banner__text">All of our furniture uses the best materials and choices for our customers. All of our furniture
+                        uses the best materials</p>
+                    <a href="#" class="banner__link" aria-label="Explore more about our furniture">Explore More</a>
+                </div>
+            </section>
+
+            <section class="partners" aria-labelledby="partners-title">
+                <h2 class="partners__title" id="partners-title">Trusted by 20,000+ companies</h2>
+                <ul class="partners__list" role="list">
+                    {% render 'partners/mastercard.liquid' %}
+                    {% render 'partners/airbnb.liquid' %}
+                    {% render 'partners/uber.liquid' %}
+                    {% render 'partners/paypal.liquid' %}
+                    {% render 'partners/visa.liquid' %}
+                    {% render 'partners/stripe.liquid' %}
+                </ul>
+            </section>
+
+            <section class="about" aria-labelledby="about-title">
+                <div class="about__banner">
+                    <img class="about__image" src="/src/assets/about.jpg" alt="Furniture in modern design">
+                </div>
+                <div class="about__info">
+                    <h2 class="about__title" id="about-title">About Us</h2>
+                    <p class="about__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga blanditiis quo itaque quasi, voluptate culpa? Aperiam nostrum corrupti maiores fugit.</p>
+                    <ul class="about__benefits" role="list">
+                        {% for benefit in about_benefits %}
+                        {% render 'about-benefit.liquid' with benefit as benefit %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+
+            <section class="popular" aria-labelledby="popular-title">
+                <h2 class="popular__title" id="popular-title">Our Popular Furniture</h2>
+                <p class="popular__subtitle">All of our furniture uses the best materials and choices for our customers. All of our furniture uses the best materials and choices for our customers.</p>
+                <div class="popular__items">
+                    {% for item in popular_items %}
+                    {% render 'furniture-item.liquid' with item as furniture %}
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="all-furniture" aria-labelledby="all-furniture-title">
+                <h2 class="all-furniture__title" id="all-furniture-title">All Furniture</h2>
+                <div class="all-furniture__tabs" role="tablist" aria-label="Furniture filter tabs">
+                    <div class="all-furniture__tab all-furniture__tab--active" role="tab" aria-selected="true" tabindex="0" data-tab="room">
+                        Shop By Room
+                    </div>
+                    <div class="all-furniture__tab" role="tab" aria-selected="false" tabindex="0" data-tab="category">
+                        Shop By Category
+                    </div>
+                    <div class="all-furniture__tab" role="tab" aria-selected="false" tabindex="0" data-tab="style">
+                        Shop By Style
+                    </div>
+                </div>
+                <div class="all-furniture__main">
+                    <div class="all-furniture__img-wrapper">
+                        <img class="all-furniture__image" src="/src/assets/all-f-1.jpg" alt="All furniture category preview">
+                    </div>
+                    <div role="group" aria-label="Furniture categories" class="all-furniture__options">
+                        {% for option in all_furniture_options %}
+                        {% render 'furniture-option.liquid', option: option, selected: forloop.first %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews" aria-labelledby="reviews-title">
+                <div class="reviews__img-wrapper">
+                    <img class="reviews__image" src="/src/assets/reviews-1.jpg" alt="Happy customer sitting on furniture">
+                </div>
+
+                <div class="reviews__main">
+                    <h2 class="reviews__title" id="reviews-title">Our customers are very important to us</h2>
+                    <p class="reviews__text">All of our furniture uses the best materials and choices for our customers.
+                        All of our furniture uses the best materials and choices for our customers.</p>
+                    <div class="reviews__info">
+                        <div class="reviews__person-img">
+                            <img class="reviews__avatar" src="/src/assets/human.png" alt="Customer photo">
+                        </div>
+                        <div class="reviews__person-info">
+                            <p class="reviews__person-name">Mh Jibon</p>
+                            <div class="reviews__person-rate" aria-label="Customer rating">
+                                {% render 'icons/star.liquid' %}
+                                <span class="reviews__rating">4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="subscribe" aria-labelledby="subscribe-title">
+                <h2 class="subscribe__title" id="subscribe-title">Subscribe to get the latest news about us</h2>
+                <p class="subscribe__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incididunt ut labore at dolore.</p>
+                <form action="" class="subscribe__form" role="form" aria-label="Newsletter subscription">
+                    <div class="subscribe__input-container">
+                        {% render 'icons/email.liquid' %}
+                        <label for="email" class="visually-hidden">Email address</label>
+                        <input type="text" id="email" name="email" class="subscribe__input" placeholder="Enter your email">
+                        <button class="subscribe__button" aria-label="Submit email for newsletter">Register</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
     <script type="module" src="/src/main.ts"></script>
-  </body>
+</body>
+
 </html>
