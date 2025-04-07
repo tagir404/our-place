@@ -96,7 +96,7 @@
                     <div class="all-furniture__img-wrapper">
                         <img class="all-furniture__image" src="/src/assets/all-f-1.jpg" alt="All furniture category preview">
                     </div>
-                    <div role="group" aria-label="Furniture categories" class="all-furniture__options">
+                    <div role="listbox" aria-label="Furniture categories" class="all-furniture__options">
                         {% for option in all_furniture_options %}
                         {% render 'furniture-option.liquid', option: option, selected: forloop.first %}
                         {% endfor %}
@@ -115,7 +115,7 @@
                         All of our furniture uses the best materials and choices for our customers.</p>
                     <div class="reviews__info">
                         <div class="reviews__person-img">
-                            <img class="reviews__avatar" src="/src/assets/human.png" alt="Customer photo">
+                            <img class="reviews__avatar" src="/src/assets/person.jpg" alt="Customer photo">
                         </div>
                         <div class="reviews__person-info">
                             <p class="reviews__person-name">Mh Jibon</p>
